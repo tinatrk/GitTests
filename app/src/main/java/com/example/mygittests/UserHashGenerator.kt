@@ -6,15 +6,15 @@ import java.util.UUID
 
 internal object UserHashGenerator {
 
-    fun generateHashedUUID(password: String): String {
-        val u = UUID.randomUUID()
-        val i = password + u.toString()
+    fun getPasswordHash(password: String): String {
+        val uuid  = UUID.randomUUID()
+        val input  = password + uuid.toString()
 
-        val b = i.toByteArray(StandardCharsets.UTF_8)
-        val d = MessageDigest.getInstance("SHA-256")
-        val bb = d.digest(b)
+        val bytes = input.toByteArray(StandardCharsets.UTF_8)
+        val messageDigest = MessageDigest.getInstance("SHA-256")
+        val hashedBytes = messageDigest.digest(bytes)
 
-        return bytesToHexString(bb)
+        return bytesToHexString(hashedBytes)
     }
 
     private fun bytesToHexString(bytes: ByteArray): String {
