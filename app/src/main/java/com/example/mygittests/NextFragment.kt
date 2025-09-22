@@ -31,6 +31,7 @@ internal class NextFragment : Fragment() {
         val nextFragmentTitle = view.findViewById<TextView>(R.id.nextFragmentTitle)
 
         nextFragmentTitle.text = "Hehe, double breaking change"
+
     }
 
 }
