@@ -30,7 +30,7 @@ internal class NextFragment : Fragment() {
         val passwordFromArguments = arguments?.getString(ARGS_PASSWORD).orEmpty()
         val nextFragmentTitle = view.findViewById<TextView>(R.id.nextFragmentTitle)
 
-        nextFragmentTitle.text = "And i'm trying to cause conflict again"
+        nextFragmentTitle.text = "Ya akula tururururu"
 
     }
 
